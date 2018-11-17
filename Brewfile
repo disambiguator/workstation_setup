@@ -1,6 +1,9 @@
 brew "wget"
 brew "zsh"
 brew "zsh-completions"
+brew "gpg"
+brew "tig"
+brew "hub"
 
 cask "firefox"
 cask "flycut"
