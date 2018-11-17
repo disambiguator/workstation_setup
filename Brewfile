@@ -1,0 +1,11 @@
+brew "wget"
+brew "zsh"
+brew "zsh-completions"
+
+cask "firefox"
+cask "flycut"
+cask "iterm2"
+cask "shiftit"
+cask "signal"
+cask "spotify"
+cask "steam"
