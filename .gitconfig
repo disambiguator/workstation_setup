@@ -12,16 +12,16 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
-	blog = log origin/master... --left-right
+	blog = log origin/main... --left-right
 	ds = diff --staged
 	fixup = commit --fixup
         fo = fetch origin
 	squash = commit --squash
 	amendit = commit --amend --no-edit
 	unstage = reset HEAD
-	rom = !git fo && git rebase master@{u}
-        cleanup = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v dev | xargs -n 1 git branch -d
-        wip = !git add -A && git commit -am 'WIP' -n
+	rom = !git fo && git rebase main@{u}
+	cleanup = !git branch --merged | grep -v \"\\*\" | grep -v main | grep -v dev | xargs -n 1 git branch -d
+	wip = !git add -A && git commit -am 'WIP' -n
 [user]
 	name = Paras Sanghavi
 	email = paras@disambiguo.us
