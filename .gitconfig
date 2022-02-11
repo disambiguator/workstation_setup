@@ -38,3 +38,5 @@
 	required = true
 [mergetool "vscode"]
     cmd = code --wait $MERGED
+[remote "origin"]
+	prune = true
