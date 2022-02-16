@@ -2,7 +2,7 @@ brew "wget"
 brew "zsh-completions"
 brew "gpg"
 brew "tig"
-brew "hub"
+brew "gh"
 
 cask "firefox"
 cask "flycut"
