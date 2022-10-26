@@ -47,3 +47,5 @@
 	gpgsign = true
 [user]
     signingkey = 78FBAE9C89D095C7
+[push]
+	default = current
