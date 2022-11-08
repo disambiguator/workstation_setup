@@ -4,7 +4,6 @@ brew "gpg"
 brew "tig"
 brew "gh"
 
-cask "firefox"
 cask "flycut"
 cask "iterm2"
-cask "shiftit"
+cask "hammerspoon"
