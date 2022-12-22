@@ -25,6 +25,7 @@
 [user]
 	name = Paras Sanghavi
 	email = paras@disambiguo.us
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh20rjlXPC/+pxvbl88HI743opcmKZpTOOCncCyK14s74E72GK/T1PT+W8qbeOmspns6YTQSHzCWlWGWjhSel4LzsxxqtGE4Vlj/wQDfPK3bwYxoz90JmezKwpxcvURCb6CUvEzIbLYyegTYLhqC6H83Fo4m2Fv1Mf9D+FQXqhg1tXqDgeBsYo5fKUPh/jU0of+XxkgEN4OZpVFq91XENZbl25SiBekCUqL94GbQsiSNwQWDeC3JLBV+KdmdmCtNEe9o9wrC1LF+v0XoudhL7yQhbLmoVNU9qo3cnrcgFUlhaU5z3VXveR6tsVHqm4hItbsrJyciy8bC8NAwmhHhNmwTPh3CqXrcbqD68+7CTu2/eDnBm4z+yGQy5cxkAD8uvUSeppo+AfhiN7qjx5ljDXWxlbhLCG7voX5WT0AOcyOHE8mcQvnBnbjcODhMKyZuqJv6k3+jbGgqMBTOgPlotq85XfyfbNd/p/ur20RtwwyMdP9aJ9In58ap47S+G51qa/lXig1d9AjR5CqVJOc0DsknZhU7GmnsZpg3s6j9RZcpyEHc7DpztynBAD8Dfq4dtzSeQTpvWsw/JkFdQlVyncqxXxi/qEOap68hjAHu7MPnuZXcfIuPwSHZ3Fk0Plo1OKTgjqessiR5bN3pi4rbAlFTLP3+KeNtrUA5Y7lZ6aZQ==
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
@@ -43,9 +44,14 @@
 	prune = true
 [gpg]
 	program = gpg
+	format = ssh
 [commit]
 	gpgsign = true
 [user]
-    signingkey = 78FBAE9C89D095C7
+[init]
+	defaultBranch = main
 [push]
 	default = current
+	autoSetupRemote = true
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
