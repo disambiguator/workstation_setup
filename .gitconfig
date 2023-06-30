@@ -7,20 +7,21 @@
 	cp = cherry-pick
 	br = branch
 	sta = stash
+	defaultbranch = !git rev-parse --abbrev-ref origin/HEAD | cut -c8-
 	llog = log --date=local
 	flog = log --pretty=fuller --decorate
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
-	blog = log origin/main... --left-right
+	blog = !git log origin/\"$(git defaultbranch)\"... --left-right
 	ds = diff --staged
 	fixup = commit --fixup
 	fo = fetch origin
 	squash = commit --squash
 	amendit = commit --amend --no-edit
 	unstage = reset HEAD
-	rom = !git fo && git rebase main@{u}
-	cleanup = !git branch --merged | grep -v \"\\*\" | grep -v main | grep -v dev | xargs -n 1 git branch -d
+	rom = !git fetch origin \"$(git defaultbranch)\" && git rebase \"$(git defaultbranch)\"@{u}
+	cleanup = !git branch --merged | grep -v \"\\*\" | grep -v \"$(git defaultbranch)\" | grep -v dev | xargs -n 1 git branch -d
 	wip = !git add -A && git -c commit.gpgsign=false commit -am 'WIP' -n
 [user]
 	name = Paras Sanghavi
@@ -45,9 +46,6 @@
 [gpg]
 	program = gpg
 	format = ssh
-[commit]
-	gpgsign = true
-[user]
 [init]
 	defaultBranch = main
 [push]
@@ -57,3 +55,7 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [advice]
 	statusHints = false
+[fetch]
+	prune = true
+[checkout]
+	guess = false
